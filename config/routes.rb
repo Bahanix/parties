@@ -1,5 +1,9 @@
 Parties::Application.routes.draw do
-  resources :parties
+  root to: 'home#index'
+
+  get 'new', to: 'parties#new', as: :new_party
+
+  resources :parties, only: [:show, :create, :update]
 
 
   # The priority is based upon order of creation:
