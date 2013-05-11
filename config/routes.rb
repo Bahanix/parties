@@ -2,9 +2,10 @@ Parties::Application.routes.draw do
   root to: 'home#index'
 
   get 'new', to: 'parties#new', as: :new_party
+  get ':id/edit', to: 'parties#edit', as: :edit_party
+  get ':id', to: 'parties#show', as: :party
 
   resources :parties, only: [:show, :create, :update]
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
