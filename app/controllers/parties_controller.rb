@@ -1,20 +1,9 @@
 class PartiesController < ApplicationController
-  # GET /parties
-  # GET /parties.json
-  def index
-    @parties = Party.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @parties }
-    end
-  end
+  before_filter :find_party, only: [:show, :edit]
 
   # GET /parties/1
   # GET /parties/1.json
   def show
-    @party = Party.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @party }
@@ -40,8 +29,6 @@ class PartiesController < ApplicationController
   # POST /parties
   # POST /parties.json
   def create
-    @party = Party.new(params[:party])
-
     respond_to do |format|
       if @party.save
         format.html { redirect_to @party, notice: 'Party was successfully created.' }
@@ -78,6 +65,16 @@ class PartiesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to parties_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def find_party
+    @party = Party.find(params[:id])
+
+    if request.path != party_path(@party)
+      redirect_to @party, status: :moved_permanently
     end
   end
 end
