@@ -35,11 +35,8 @@ GEM
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     builder (3.0.4)
-<<<<<<< HEAD
-    cocoon (1.1.2)
-=======
     chunky_png (1.2.8)
->>>>>>> BI Add compass
+    cocoon (1.1.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
