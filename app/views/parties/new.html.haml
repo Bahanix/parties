@@ -1,5 +1,41 @@
 %h1 New party
 
-= render 'form'
-
-= link_to 'Back', parties_path
+#CreatorWizard.fuelux-wizard
+  .header
+    %ul.steps
+      %li.active{"data-target" => "#step1"}
+        %span.badge.badge-info> 1
+        Général
+        %span.chevron
+      %li{"data-target" => "#step2"}
+        %span.badge> 2
+        Liste d'objets
+        %span.chevron
+      %li{"data-target" => "#step3"}
+        %span.badge> 3
+        Participants
+        %span.chevron
+    .clearfix
+  .step-content
+    #step1.step-pane.active
+      This is step 1
+      .pull-right
+        %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step2"}
+          next
+          %i.icon-arrow-right
+    #step2.step-pane
+      This is step 2
+      .pull-right
+        %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step3"}
+          next
+          %i.icon-arrow-right
+    #step3.step-pane
+      This is step 3
+      .pull-right
+        %a.btn.btn-mini.btn-next{:href => "#"}
+          Create
+- content_for :js do
+  :javascript
+    (function(){
+      $('#CreatorWizard').wizard();
+    }).call(this);
