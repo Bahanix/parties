@@ -15,7 +15,7 @@ class PartiesController < ApplicationController
   # POST /parties
   # POST /parties.json
   def create
-    @party = Party.new
+    @party = Party.new(params[:party])
 
     respond_to do |format|
       if @party.save
