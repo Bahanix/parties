@@ -12,3 +12,4 @@ en:
   parties:
     new:
     show:
+      description: "Click here to set a description."
