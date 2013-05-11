@@ -4,3 +4,10 @@
 %p= best_in_place @party, :description, nil: t('.description')
 %p= best_in_place @party, :start_at, type: :date
 
+- @party.participants.each do |p|
+  = render 'participants/avatar', p: p
+
+- @party.items.each do |i|
+  %label.checkbox{ for: "items_#{i.id}" }
+    = check_box_tag "items[#{i.id}]", 0
+    = i.name
