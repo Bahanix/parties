@@ -1,17 +1,5 @@
-%p
-  %b Name:
-  = @party.name
-%p
-  %b Description:
-  = @party.description
-%p
-  %b Location:
-  = @party.location
-%p
-  %b Start at:
-  = @party.start_at
-%p
-  %b Slug:
-  = @party.slug
+- content_for :title, t('.title')
 
-= link_to 'Edit', edit_party_path(@party)
+%h1= @party.name
+
+= render 'form', party: @party
