@@ -15,14 +15,13 @@ namespace :db do
       rand(5..10).times do
         item = Item.new
         item.name = Faker::Lorem.words(1)
-        item.party_id = party.id
+        party.items << item
       end
       rand(4..12).times do
         p = Participant.new
         p.name = Faker::Name.name
-        p.party_id = party.id
+        party.participants << p
         p.items << Item.where(party_id: party.id).order('random()').limit(rand(1..5))
-        p.save
       end
       party.save
     end
