@@ -13,6 +13,7 @@ group :assets do
 end
 
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'faker'
 gem 'flat-ui-rails'
 gem "friendly_id", "~> 4.0.9"
 gem 'haml-rails'
