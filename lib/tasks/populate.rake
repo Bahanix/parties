@@ -9,12 +9,12 @@ namespace :db do
     2.times do |i|
       party = Party.new
       party.name = "party#{i}"
-      party.description = Faker::Lorem.sentences(1..3)
+      party.description = Faker::Lorem.sentences(1..3).join(' ')
       party.location = Faker::Address.street_address
       party.start_at = Time.now
       rand(5..10).times do
         item = Item.new
-        item.name = Faker::Lorem.words(1)
+        item.name = Faker::Lorem.word
         party.items << item
       end
       rand(4..12).times do
