@@ -1,0 +1,12 @@
+= simple_form_for(@party) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :location
+    = f.input :start_at
+    = f.input :slug
+
+  .form-actions
+    = f.button :submit
