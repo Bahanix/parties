@@ -1,15 +1,29 @@
 @import compass/typography
 @import compass/layout
+@import compass/css3
 
 $base-font-size: 16px
 $base-line-height: 24px
-+establish-baseline
 
 .home
-  font-size: 16px
-  line-height: 1.5em
+  font-size: $base-font-size
+  line-height: $base-line-height
+
+  i.checklist
+    display: inline-block
+    background: image-url('clipboard.png') no-repeat left top
+
+    // Vertical rhythm without the top of the image
+    $image-height:  108px
+    $image-width:   108px
+    height: $image-height
+    width: $image-width
+    background-size: $image-width $image-height
+
+    margin-right: 10px
 
   &.index
+
     .jumbotron
       text-align: center
       +leader(2)
@@ -27,14 +41,22 @@ $base-line-height: 24px
         +leader(1,$font-size)
         +trailer(1,$font-size)
 
+      i.checklist
+        margin-right: 10px
+        vertical-align: bottom
+
       a.btn
-        $font-size: 60px
+        $font-size: 40px
         +adjust-font-size-to($font-size)
-        +rhythm(0,1,1,0,$font-size)
+        +rhythm(1,1,1,0,$font-size)
+
+        background: #27AE60
+
+        &:hover
+          background: #2ECC71
 
   &.pirate1
     background: #eadac0
-    // +baseline-grid-background
 
     h3
       $font-size: 24px
@@ -91,10 +113,20 @@ $base-line-height: 24px
         +leader(1,$font-size)
         +trailer(1,$font-size)
 
+      i.checklist
+        margin-right: 10px
+        vertical-align: top
+
       a.btn
-        $font-size: 60px
+        $font-size: 40px
         +adjust-font-size-to($font-size)
-        +rhythm(0,1,1,0,$font-size)
+        +rhythm(1,1,1,0,$font-size)
+        vertical-align: top
+
+        background: #27AE60
+
+        &:hover
+          background: #2ECC71
 
   @mixin rackham-theme($theme-color)
     background: $theme-color
@@ -132,13 +164,61 @@ $base-line-height: 24px
         +leader(1,$font-size)
         +trailer(1,$font-size)
 
+      img.checklist
+        margin-right: 10px
+        vertical-align: top
+
       a.btn
-        $font-size: 60px
+        $font-size: 40px
         +adjust-font-size-to($font-size)
-        +rhythm(0,1,1,0,$font-size)
+        +rhythm(1,1,1,0,$font-size)
+        vertical-align: top
+
+        background: #27AE60
+
+        &:hover
+          background: #2ECC71
 
   &.pirate2
     +rackham-theme(white)
 
   &.pirate3
     +rackham-theme(black)
+
+
+  &.jack, &.without_pirate
+    background: #2C3E50
+    color: #ECF0F1
+    //+baseline-grid-background
+
+    .header
+      background: image-url('jack-eyes-left.jpg') left top no-repeat
+      +padding-trailer(4)
+      background-size: auto 100% 
+
+    h1
+      $font-size: 80px
+      +adjust-font-size-to($font-size)
+      +leader(0,$font-size)
+      +trailer(1,$font-size)
+
+    p
+      $font-size: 40px
+      +adjust-font-size-to($font-size)
+      +leader(1,$font-size)
+      +trailer(1,$font-size)
+
+    i.checklist
+      margin-right: 10px
+      vertical-align: top
+
+    a.btn
+      $font-size: 40px
+      +adjust-font-size-to($font-size)
+      +rhythm(1,1,1,0,$font-size)
+      vertical-align: top
+      
+      background: #27AE60
+
+      &:hover
+        background: #2ECC71
