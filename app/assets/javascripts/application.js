@@ -15,6 +15,7 @@
 //= require jquery.ui.datepicker
 //= require bootstrap
 //= require flat-ui
+//= require cocoon
 //= require jquery.purr
 //= require best_in_place
 //= require_tree .

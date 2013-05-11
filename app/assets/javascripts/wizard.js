@@ -73,6 +73,8 @@
                 setState(getStepIndexFromHash($(this).attr('data-target')));
                 return false;
             });
+
+            
         };
         
         // Sample Function, Uncomment to use

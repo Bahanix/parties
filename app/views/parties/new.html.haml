@@ -32,8 +32,13 @@
       .clearfix
     #step2.step-pane.active
       = f.simple_fields_for :items do |i|
-        .form-inputs
-          = i.input :name
+        = render 'item_fields', :f => i
+      .links
+        .control-group.form-inputs
+          %label.control-label
+          .controls
+            %input{:type => "text",:disabled => ""}
+        = link_to_add_association 'add item', f, :items
       .pull-right
         %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step3"}
           next
@@ -49,4 +54,8 @@
   :javascript
     (function(){
       $('#CreatorWizard').wizard();
+      $('#step2').bind('cocoon:after-insert', function(){
+        var $newField = $(this).find('.nested-fields').last().find('.controls input');
+        $newField.focus();
+      });
     }).call(this);
