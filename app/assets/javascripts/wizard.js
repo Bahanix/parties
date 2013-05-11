@@ -66,6 +66,7 @@
         base.init = function(){
             base.options = $.extend({},$.Wizard.defaultOptions, options);
 
+            setState(base.currentStep);
             
             // Put your initialization code here
             base.$el.on('click', '[data-target]', function(){

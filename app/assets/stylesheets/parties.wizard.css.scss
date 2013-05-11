@@ -170,3 +170,11 @@
 .fuelux-wizard .step-content .active {
   display: block;
 }
+
+.fuelux-wizard .form-inputs input, .fuelux-wizard .form-inputs textarea {
+  width: 500px;
+}
+
+.fuelux-wizard .form-actions {
+  margin: 20px -10px -10px -10px;
+}
