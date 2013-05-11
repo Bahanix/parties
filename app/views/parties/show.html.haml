@@ -1,5 +1,5 @@
-- content_for :title, t('.title')
+- content_for :title, @party.name
 
-%h1= @party.name
+%h1= best_in_place @party, :name
+%p= best_in_place @party, :description, placeholder: 'hop'
 
-= render 'form', party: @party
