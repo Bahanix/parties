@@ -3,6 +3,8 @@ Parties::Application.routes.draw do
   get 'home/pirate1'
   get 'home/pirate2'
   get 'home/pirate3'
+  get 'home/jack'
+  get 'home/without_pirate'
 
   resources :parties, only: %i[new show update], path: '' do
     collection do
