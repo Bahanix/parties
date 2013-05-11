@@ -21,8 +21,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'bootstrap-rails'
-gem 'flatui-rails'
+gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'flat-ui-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'simple_form'
