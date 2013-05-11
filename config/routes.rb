@@ -1,5 +1,8 @@
 Parties::Application.routes.draw do
   root to: 'home#index'
+  get 'home/pirate1'
+  get 'home/pirate2'
+  get 'home/pirate3'
 
   resources :parties, only: %i[new show update], path: '' do
     collection do
