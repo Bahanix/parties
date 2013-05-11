@@ -1,34 +1,22 @@
 class PartiesController < ApplicationController
   before_filter :find_party, only: [:show, :edit]
 
-  # GET /parties/1
-  # GET /parties/1.json
+  # GET /1
+  # GET /1.json
   def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @party }
-    end
   end
 
-  # GET /parties/new
-  # GET /parties/new.json
+  # GET /new
+  # GET /new.json
   def new
     @party = Party.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @party }
-    end
-  end
-
-  # GET /parties/1/edit
-  def edit
-    @party = Party.find(params[:id])
   end
 
   # POST /parties
   # POST /parties.json
   def create
+    @party = Party.new(params[:party])
+
     respond_to do |format|
       if @party.save
         format.html { redirect_to @party, notice: 'Party was successfully created.' }
@@ -40,8 +28,8 @@ class PartiesController < ApplicationController
     end
   end
 
-  # PUT /parties/1
-  # PUT /parties/1.json
+  # PUT /1
+  # PUT /1.json
   def update
     @party = Party.find(params[:id])
 
@@ -56,8 +44,8 @@ class PartiesController < ApplicationController
     end
   end
 
-  # DELETE /parties/1
-  # DELETE /parties/1.json
+  # DELETE /1
+  # DELETE /1.json
   def destroy
     @party = Party.find(params[:id])
     @party.destroy

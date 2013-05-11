@@ -1,7 +1,7 @@
 Parties::Application.routes.draw do
   root to: 'home#index'
 
-  resources :parties, only: %i[new edit show update], path: '' do
+  resources :parties, only: %i[new show update], path: '' do
     collection do
       post '/parties' => :create, as: ''
     end
