@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511153752) do
+ActiveRecord::Schema.define(:version => 20130511191542) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20130511153752) do
     t.string   "name"
     t.text     "description"
     t.string   "location"
-    t.datetime "start_at"
+    t.date     "start_at"
     t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

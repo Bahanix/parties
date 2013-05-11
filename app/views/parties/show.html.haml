@@ -1,5 +1,6 @@
 - content_for :title, @party.name
 
 %h1= best_in_place @party, :name
-%p= best_in_place @party, :description, placeholder: 'hop'
+%p= best_in_place @party, :description, nil: t('.description')
+%p= best_in_place @party, :start_at, type: :date
 
