@@ -4,9 +4,6 @@ class PartiesController < ApplicationController
   # GET /1
   # GET /1.json
   def show
-    if @party.description.blank?
-      @party.description = I18n.t('parties.show.description')
-    end
   end
 
   # GET /new
