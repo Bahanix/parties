@@ -1,39 +1,50 @@
-%h1 New party
+%h1
+  Organisez votre soirée
 
 #CreatorWizard.fuelux-wizard
   .header
     %ul.steps
-      %li.active{"data-target" => "#step1"}
+      %li{"data-target" => "#step1"}
         %span.badge.badge-info> 1
         Général
         %span.chevron
       %li{"data-target" => "#step2"}
         %span.badge> 2
-        Liste d'objets
+        Fournitures
         %span.chevron
       %li{"data-target" => "#step3"}
         %span.badge> 3
-        Participants
+        Invitations
         %span.chevron
     .clearfix
-  .step-content
-    #step1.step-pane.active
-      This is step 1
+  = simple_form_for(@party, html: { class: 'form-horizontal step-content' }) do |f|
+    = f.error_notification
+    #step1.step-pane
+      .form-inputs
+        = f.input :name
+        = f.input :location
+        = f.input :start_at, :as => :datepicker
+        = f.input :description, input_html: { rows: 3 }
       .pull-right
         %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step2"}
           next
           %i.icon-arrow-right
-    #step2.step-pane
-      This is step 2
+      .clearfix
+    #step2.step-pane.active
+      = f.simple_fields_for :items do |i|
+        .form-inputs
+          = i.input :name
       .pull-right
         %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step3"}
           next
           %i.icon-arrow-right
+      .clearfix
     #step3.step-pane
       This is step 3
-      .pull-right
-        %a.btn.btn-mini.btn-next{:href => "#"}
-          Create
+      .form-actions
+        = f.button :submit
+
+
 - content_for :js do
   :javascript
     (function(){
