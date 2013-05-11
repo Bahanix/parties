@@ -14,6 +14,7 @@ end
 
 gem 'best_in_place'
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem "cocoon"
 gem 'faker'
 gem 'flat-ui-rails'
 gem 'font-awesome-sass-rails'

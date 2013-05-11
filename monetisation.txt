@@ -1,0 +1,10 @@
+suggérer des produits complémentaires : 
+  * chips => guacamole
+  * vodka => jus d'orange
+
+template de liste de course (en fonction du nbre de participants)
+
+affichage des évènements de la soirée et proposition d'organisation :
+  * match foot => soirée bière/pizza
+
+une fois que la liste est faite : commande sur alloresto ? ou autre
