@@ -1,8 +1,4 @@
 Parties::Application.routes.draw do
-  root to: 'parties#new'
-  resources :parties
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
