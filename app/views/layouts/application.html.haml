@@ -5,9 +5,10 @@
     %title= content_for?(:title) ? yield(:title) + ' - ' + t('.title') : t('.title')
     = stylesheet_link_tag :application, :media => "all"
     = csrf_meta_tags
-    = yield(:head)
+    = yield :head
   %body
     #container.container
       = render 'layouts/messages'
       = yield
     = javascript_include_tag :application
+    = yield :js
