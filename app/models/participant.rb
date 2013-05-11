@@ -3,4 +3,10 @@ class Participant < ActiveRecord::Base
   has_and_belongs_to_many :items
   attr_accessible :name
   validates_presence_of :name
+
+  def short_name
+    splitted = name.split ' '
+    splitted.many? ? splitted.first(2).map{|w| w[0]}.join.upcase : name[0..1].downcase.capitalize
+  end
+
 end
