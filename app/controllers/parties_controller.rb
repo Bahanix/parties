@@ -12,10 +12,6 @@ class PartiesController < ApplicationController
     @party = Party.new
   end
 
-  # GET /1/edit
-  def edit
-  end
-
   # POST /parties
   # POST /parties.json
   def create
