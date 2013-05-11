@@ -16,8 +16,16 @@
 @import compass/typography
 
 $base-font-size: 16px
-$base-line-height: 24px
-+establish-baseline
+$base-line-height: 1.5em
+
+// Manual establish baseline
+// Make it !important to override flat-ui
+* html
+  font-size: 100% !important
+
+html
+  font-size: $base-font-size !important
+  line-height: $base-line-height !important
 
 html, body
-  min-height: 100%
+  min-height: 100% !important
