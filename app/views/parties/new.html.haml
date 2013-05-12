@@ -1,14 +1,12 @@
-%h2 Plan an event
-
 #CreatorWizard.fuelux-wizard.wizard
   .header
     %ol.steps
       %li{"data-target" => "#step1"}
-        %span Describe your event
+        %span Your event
       %li{"data-target" => "#step2"}
-        %span Suggest some supplies
+        %span Some supplies
       %li{"data-target" => "#step3"}
-        %span Send it to your guests
+        %span Your guests
 
   = simple_form_for(@party, html: { class: 'form-horizontal step-content' }) do |f|
     = f.error_notification
