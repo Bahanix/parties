@@ -50,12 +50,18 @@
 
             base.$el.bind('cocoon:after-insert', base.afterInsertHook);
         },
-        setItems: function(itemList){
+        removeItems: function(){
             var base = this;
             base.batchMode = true;
 
             // remove fields
             base.$el.find('.nested-fields a.remove_fields.dynamic').click();
+
+            base.batchMode = false;
+        },
+        addItems: function(itemList){
+            var base = this;
+            base.batchMode = true;
 
             // set fields
             var $addLink = base.$el.find('.add_fields');
@@ -82,7 +88,10 @@
             } else {
                 if(options && typeof options === 'string'){
                     if(options === 'set-items' && Object.prototype.toString.call(datas) === '[object Array]'){
-                        data.setItems(datas);
+                        data.removeItems();
+                        data.addItems(datas);
+                    } else if(options === 'add-items' && Object.prototype.toString.call(datas) === '[object Array]'){
+                        data.addItems(datas);
                     } else {
                         
                     }

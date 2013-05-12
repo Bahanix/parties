@@ -1,8 +1,46 @@
 [
-  {"value":"pizza","desc":"is good with beer !","type":"nourriture salée"},
-  {"value":"beer","desc":"is life...","type":"alcool"},
-  {"value":"chips","desc":"and what about guacamole","type":"nourriture salée"},
-  {"value":"guacamole","desc":"is the best :)","type":"nourriture salée"},
-  {"value":"kitkats","desc":"have a break.","type":"nourriture sucrée"},
-  {"value":"vodka","desc":"pour les hommes","type":"alcool"}
+  {
+    "type":"nourriture salée",
+    "label":"pizza",
+    "value":"pizza",
+    "desc":"is good with beer !",
+    "next":["beer", "vodka"]
+  },
+  {
+    "type":"alcool",
+    "label":"beer",
+    "value":"beer",
+    "desc":"is life..."
+  },
+  {
+    "type":"alcool",
+    "label":"vodka",
+    "value":"vodka",
+    "desc":"is life...",
+    "next":["Jus d'orange"]
+  },
+  {
+    "type":"nourriture salée",
+    "label":"chips",
+    "value":"chips",
+    "desc":"and what about guacamole"
+  },
+  {
+    "type":"nourriture salée",
+    "label":"guacamole",
+    "value":"guacamole",
+    "desc":"is the best :)"
+  },
+  {
+    "type":"nourriture sucrée",
+    "label":"kitkats",
+    "value":"kitkats",
+    "desc":"have a break."
+  },
+  {
+    "type":"alcool",
+    "label":"vodka",
+    "value":"vodka",
+    "desc":"pour les hommes"
+  }
 ]

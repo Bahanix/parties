@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
+//= require jquery.ui.all
 //= require bootstrap
 //= require typeahead
 //= require hogan-2.0.0

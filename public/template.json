@@ -1,0 +1,17 @@
+[
+  {
+    "name":"foot",
+    "label":"Soirée foot",
+    "items":[ "pizza", "chips", "bière" ]
+  },
+  {
+    "name":"film",
+    "label":"Soirée film",
+    "items":["chips", "guacamile", "cacahuètes", "coca"]
+  },
+  {
+    "name":"picnic",
+    "label":"Pic nic",
+    "items":[ "assiettes", "verres", "couverts", "bouteilles d'eau", "serviettes" ]
+  }
+]

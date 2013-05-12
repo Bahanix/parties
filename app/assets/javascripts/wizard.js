@@ -62,6 +62,7 @@
 
         // Internal vars
         base.currentStep = getCurrentState(base.$el);
+        base.maxStep = base.$el.find('.step-content .step-pane').length;
         if(base.currentStep == 0){
             base.currentStep = 1;
         }
@@ -77,7 +78,13 @@
                 return false;
             });
 
-            
+            base.$el.find('form').submit(function(){
+                console.log('submit');
+                if(base.currentStep !== base.maxStep){
+                    setState(base.currentStep+1);
+                    return false;
+                }
+            });
         };
         
         // Sample Function, Uncomment to use
