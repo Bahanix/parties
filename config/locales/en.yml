@@ -13,3 +13,10 @@ en:
     new:
     show:
       description: "Click here to set a description."
+
+  activerecord:
+    attributes:
+      party:
+        name: Event name
+      item:
+        name: Item
