@@ -2,16 +2,19 @@
   {
     "name":"foot",
     "label":"Soirée foot",
+    "desc":"Sport, bières et pizzas; what else ?",
     "items":[ "pizza", "chips", "bière" ]
   },
   {
     "name":"film",
     "label":"Soirée film",
+    "desc":"Tout pour passer une soirée bien callé.",
     "items":["chips", "guacamole", "cacahuètes", "coca"]
   },
   {
     "name":"picnic",
     "label":"Pic nic",
+    "desc":"Profiter un beau temps en tout confort",
     "items":[ "assiettes", "verres", "couverts", "bouteilles d'eau", "serviettes" ]
   }
 ]

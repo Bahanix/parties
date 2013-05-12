@@ -50,6 +50,10 @@ header {
     @include rhythm(0,0,0,0);
   }
 
+  h1.top {
+    margin-top: 25px;
+  }
+
   .catchphrase {
     font-style: italic;
     color: #BDC3C7;
