@@ -9,8 +9,25 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require jquery.ui.datepicker
+ *= require icons
  *= require_self
  *= require_tree .
  */
+
 @import "bootstrap";
 @import "font-awesome";
+@import 'baseline';
+
+
+header {
+  background-image: inline-image('clipboard.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+
+  $image-height:    50px;
+  $image-width:     50px;
+  height:           $image-height;
+  background-size:  $image-width $image-height;
+
+  padding-left: $image-width + 20px;
+}
