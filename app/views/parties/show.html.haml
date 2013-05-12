@@ -4,10 +4,24 @@
 %p= best_in_place @party, :description, nil: t('.description')
 %p= best_in_place @party, :start_at, type: :date
 
-- @party.participants.each do |p|
-  = render 'participants/avatar', p: p
+= form_tag participants_path(format: :js), remote: true, class: 'form-participants' do
+  = hidden_field_tag "party[id]", @party.id
+  .input-append
+    = text_field_tag 'participant[name]'
+    = submit_tag '+', class: 'btn'
+  .participants
+    - @party.participants.includes(:items).each do |p|
+      = render 'participants/avatar', p: p
 
-- @party.items.each do |i|
-  %label.checkbox{ for: "items_#{i.id}" }
-    = check_box_tag "items[#{i.id}]", 0
-    = i.name
+= form_tag settings_path(format: :json), remote: true, class: 'form-items' do
+  = hidden_field_tag "party[id]", @party.id
+  = hidden_field_tag "participant[id]", 0
+  .items
+    - @party.items.includes(:participants).each do |i|
+      = render 'items/show', i: i
+
+= form_tag items_path(format: :js), remote: true do
+  = hidden_field_tag "party[id]", @party.id
+  .input-append
+    = text_field_tag 'item[name]'
+    = submit_tag '+', class: 'btn'
