@@ -1,0 +1,5 @@
+$items = $('.items');
+$items.html('')
+<% @items.each do |i| %>
+  $items.append("<%= escape_javascript(render 'items/show', i: i, checked: @participant.items.include?(i)) %>");
+<% end %>

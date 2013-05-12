@@ -3,11 +3,13 @@ $formItems = $('.form-items')
 $formParticipants = $('.form-participants')
 $items = $('.items')
 $item = $('.item')
+$item.prop('disabled', true);
 $participants = $('.participants')
 $participant = $('.participant')
 $participant.tooltip()
 current = 0
 $participants.on 'click', '.participant', ->
+  $item.prop('disabled', false);
   $this = current = $(this)
   $pid.val($this.data('id'))
   $participants.find('.participant').css 'background-color', '#ddd'

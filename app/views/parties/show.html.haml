@@ -13,7 +13,7 @@
     - @party.participants.includes(:items).each do |p|
       = render 'participants/avatar', p: p
 
-= form_tag settings_path(format: :json), remote: true, class: 'form-items' do
+= form_tag settings_path(format: :js), remote: true, class: 'form-items' do
   = hidden_field_tag "party[id]", @party.id
   = hidden_field_tag "participant[id]", 0
   .items

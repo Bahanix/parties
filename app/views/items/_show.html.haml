@@ -1,5 +1,5 @@
 %label.checkbox{ for: "items_#{i.id}" }
-  = check_box_tag "items[#{i.id}]", 1, false, class: 'item', 'data-id' => i.id
+  = check_box_tag "items[#{i.id}]", 1, defined?(checked) ? checked : false, class: 'item', 'data-id' => i.id
   = i.name
   - i.participants.each do |p|
     = render 'participants/avatar', p: p
