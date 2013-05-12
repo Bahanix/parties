@@ -1,2 +1,3 @@
 $('.participants').append("<%= escape_javascript(render 'avatar', p: @participant) %>");
 $('.participant[data-id=<%= @participant.id %>]').tooltip().click();
+$('#participant_name').val('');
