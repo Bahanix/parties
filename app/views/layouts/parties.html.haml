@@ -1,6 +1,8 @@
--content_for :header do
+-content_for :content do
   %header
-    .h1 ibring.me
-    .catchphrase Shared grocery lists for events
+    =link_to root_path do
+      %h1 ibring.me
+      .catchphrase Shared grocery lists for events
+  =yield
 
 =render template: 'layouts/application'
