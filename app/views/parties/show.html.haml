@@ -19,7 +19,8 @@
         .participants
           - @party.participants.includes(:items).each do |p|
             = render 'participants/avatar', p: p
-        .help-block Click to see what the participant brings
+        - if @party.participants.any?
+          .help-block Click to see what the participant brings
 
 .widget
   = form_tag settings_path(format: :js), remote: true, class: 'form-horizontal form-items' do
