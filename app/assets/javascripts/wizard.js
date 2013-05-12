@@ -62,6 +62,9 @@
 
         // Internal vars
         base.currentStep = getCurrentState(base.$el);
+        if(base.currentStep == 0){
+            base.currentStep = 1;
+        }
         
         base.init = function(){
             base.options = $.extend({},$.Wizard.defaultOptions, options);
