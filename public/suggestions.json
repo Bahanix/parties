@@ -1,46 +1,137 @@
 [
   {
-    "type":"nourriture salée",
-    "label":"pizza",
+    "type":"salé",
+    "value":"saucisson",
+    "desc":"",
+    "next":["vin"]
+  },
+  {
+    "type":"alcool",
+    "value":"vin",
+    "desc":"",
+    "next":["fromage"]
+  },
+  {
+    "type":"salé",
+    "value":"fromage",
+    "desc":"",
+    "next":["saucisson"]
+  },
+  {
+    "type":"salé",
     "value":"pizza",
     "desc":"is good with beer !",
-    "next":["beer", "vodka"]
+    "next":["bière", "vodka"]
   },
   {
     "type":"alcool",
-    "label":"beer",
-    "value":"beer",
-    "desc":"is life..."
+    "value":"bière",
+    "desc":"is life...",
+    "next":["chips"]
   },
   {
     "type":"alcool",
-    "label":"vodka",
     "value":"vodka",
     "desc":"is life...",
-    "next":["Jus d'orange"]
+    "next":["jus d'orange"]
   },
   {
-    "type":"nourriture salée",
-    "label":"chips",
+    "type":"salé",
     "value":"chips",
-    "desc":"and what about guacamole"
+    "desc":"and what about guacamole",
+    "next":["moutarde"]
   },
   {
-    "type":"nourriture salée",
-    "label":"guacamole",
+    "type":"sauce",
     "value":"guacamole",
-    "desc":"is the best :)"
-  },
-  {
-    "type":"nourriture sucrée",
-    "label":"kitkats",
-    "value":"kitkats",
-    "desc":"have a break."
+    "desc":"is the best :)",
+    "next":["tequila"]
   },
   {
     "type":"alcool",
-    "label":"vodka",
-    "value":"vodka",
-    "desc":"pour les hommes"
+    "value":"cidre",
+    "desc":"",
+    "next":["poivrons"]
+  },
+  {
+    "type":"boisson",
+    "value":"coca",
+    "desc":"",
+    "next":["ice tea"]
+  },
+  {
+    "type":"boisson",
+    "value":"ice tea",
+    "desc":"",
+    "next":["bonbons"]
+  },
+  {
+    "type":"sucré",
+    "value":"bonbons",
+    "desc":"",
+    "next":["salade"]
+  },
+  {
+    "type":"bbq",
+    "value":"brochettes",
+    "desc":"",
+    "next":["merguez"]
+  },
+  {
+    "type":"bbq",
+    "value":"côtelettes",
+    "desc":"",
+    "next":["salade"]
+  },
+  {
+    "type":"divers",
+    "value":"sauces",
+    "desc":""
+  },
+  {
+    "type":"entrée",
+    "value":"salade",
+    "desc":"",
+    "next":["riz"]
+  },
+  {
+    "type":"bbq",
+    "value":"saucisses",
+    "desc":"",
+    "next":["charbon"]
+  },
+  {
+    "type":"bbq",
+    "value":"merguez",
+    "desc":"",
+    "next":["côtelettes"]
+  },
+  {
+    "type":"entrée",
+    "value":"carottes",
+    "desc":"",
+    "next":["tapenade", "cidre"]
+  },
+  {
+    "type":"sauce",
+    "value":"tapenade",
+    "desc":""
+  },
+  {
+    "type":"entrée",
+    "value":"poivrons",
+    "desc":"",
+    "next":["carottes", "champignons"]
+  },
+  {
+    "type":"entrée",
+    "value":"champignons",
+    "desc":"if you know what I mean",
+    "next":["poivrons"]
+  },
+  {
+    "type":"sucré",
+    "value":"kitkats",
+    "desc":"have a break."
   }
 ]
