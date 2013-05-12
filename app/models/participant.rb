@@ -9,4 +9,8 @@ class Participant < ActiveRecord::Base
     splitted.many? ? splitted.first(2).map{|w| w[0]}.join.upcase : name[0..1].downcase.capitalize
   end
 
+  def color
+    name.to_s(16).first(6)
+  end
+
 end
