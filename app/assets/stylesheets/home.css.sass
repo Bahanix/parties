@@ -2,8 +2,12 @@
 @import compass/layout
 @import compass/css3
 
+@import respond_to
+
 $base-font-size: 16px
 $base-line-height: 24px
+
+
 
 .home
   font-size: $base-font-size
@@ -15,11 +19,27 @@ $base-line-height: 24px
       +leader(2)
       +trailer(2)
 
+      +respond(tablet)
+        +leader(0)
+
       h1
         $font-size: 80px
         +adjust-font-size-to($font-size)
         +leader(0,$font-size)
         +trailer(1,$font-size)
+
+        +respond(tablet)
+          $font-size: 80px
+          +adjust-font-size-to($font-size)
+          +leader(0,$font-size)
+          +trailer(0,$font-size)
+
+        +respond(phone)
+          $font-size: 70px
+          +adjust-font-size-to($font-size)
+          +leader(0,$font-size)
+          +trailer(0,$font-size)
+          
 
       p
         color: #BDC3C7
@@ -27,6 +47,18 @@ $base-line-height: 24px
         +adjust-font-size-to($font-size)
         +leader(1,$font-size)
         +trailer(1,$font-size)
+
+        +respond(phone)
+          $font-size: 20px
+          +adjust-font-size-to($font-size)
+          +leader(0,$font-size)
+          +trailer(1,$font-size)
+
+        +respond(tablet)
+          $font-size: 20px
+          +adjust-font-size-to($font-size)
+          +leader(0,$font-size)
+          +trailer(1,$font-size)
 
       i.icon.checklist
         // Vertical rhythm without the top of the image
@@ -39,6 +71,13 @@ $base-line-height: 24px
         margin-right: 10px
         vertical-align: bottom
 
+        +respond(phone)
+          $font-size: 20px
+          +adjust-font-size-to($font-size)
+          +leader(0,$font-size)
+          +trailer(1,$font-size)
+          display: block
+          margin: auto
 
       a.btn
         $font-size: 40px

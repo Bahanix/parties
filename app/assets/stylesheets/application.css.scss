@@ -15,8 +15,10 @@
  */
 
 @import "bootstrap";
+@import "bootstrap-responsive";
 @import "font-awesome";
 @import 'baseline';
+@import 'respond_to';
 
 button::-moz-focus-inner {
   border: 0;
@@ -25,6 +27,10 @@ button::-moz-focus-inner {
 header {
   float: right;
   margin-top: 10px;
+
+  @include respond(phone) {
+    float: left !important;
+  }
 
   background-image: inline-image('clipboard.png');
   background-repeat: no-repeat;
