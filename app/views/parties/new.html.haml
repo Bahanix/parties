@@ -23,7 +23,7 @@
           next
           %i.icon-arrow-right
       .clearfix
-    #step2.step-pane.active
+    #step2.step-pane
       %a.btn.btn-template set list
       = f.simple_fields_for :items do |i|
         = render 'item_fields', :f => i
