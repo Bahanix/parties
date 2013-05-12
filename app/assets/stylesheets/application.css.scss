@@ -18,16 +18,33 @@
 @import "font-awesome";
 @import 'baseline';
 
-
 header {
   background-image: inline-image('clipboard.png');
   background-repeat: no-repeat;
   background-position: left top;
 
-  $image-height:    50px;
-  $image-width:     50px;
-  height:           $image-height;
+  $image-height:    rhythm(3);
+  $image-width:     rhythm(3);
   background-size:  $image-width $image-height;
 
-  padding-left: $image-width + 20px;
+
+  @include leader(1);
+  @include trailer(1);
+
+  a:active, a:link, a:visited, a:hover {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    padding-left: $image-width + 0.5em;
+  }
+
+  h1 {
+    @include adjust-font-size-to(40px);
+    @include rhythm(0,0,0,0);
+  }
+
+  .catchphrase {
+    font-style: italic;
+    color: #BDC3C7;
+  }
 }
