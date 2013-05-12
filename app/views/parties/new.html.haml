@@ -1,22 +1,15 @@
-%h1
-  Organisez votre soirée
+%h1 Plan an event
 
-#CreatorWizard.fuelux-wizard
+#CreatorWizard.fuelux-wizard.wizard
   .header
-    %ul.steps
+    %ol.steps
       %li{"data-target" => "#step1"}
-        %span.badge.badge-info> 1
-        Général
-        %span.chevron
+        %span Describe your event
       %li{"data-target" => "#step2"}
-        %span.badge> 2
-        Fournitures
-        %span.chevron
+        %span Suggest some supplies
       %li{"data-target" => "#step3"}
-        %span.badge> 3
-        Invitations
-        %span.chevron
-    .clearfix
+        %span Send it to your guests
+
   = simple_form_for(@party, html: { class: 'form-horizontal step-content' }) do |f|
     = f.error_notification
     #step1.step-pane
