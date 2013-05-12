@@ -12,6 +12,10 @@ Parties::Application.routes.draw do
     end
   end
 
+  post '/settings', to: 'participants#set', as: :settings
+  post '/participants', to: 'participants#create', as: :participants
+  post '/items', to: 'items#create', as: :items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

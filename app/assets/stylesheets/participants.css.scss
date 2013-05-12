@@ -1,9 +1,20 @@
 .participant {
-  width: 28px;
-  height: 28px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
   display: inline-block;
-  background-color: #eee;
+  background-color: #ddd;
   text-align: center;
-  line-height: 28px;
+  line-height: 30px;
   font-size: 14px;
+}
+.add.participant {
+  width: auto;
+  padding-left: 4px;
+  input {
+    margin: 0;
+    margin-top: -2px;
+    padding: 0;
+    height: 28px;
+  }
 }

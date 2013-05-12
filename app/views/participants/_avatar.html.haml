@@ -1,1 +1,1 @@
-%span.participant{ title: p.name }= p.short_name
+.participant{ title: p.name, 'data-id' => p.id, 'data-items' => p.items.map(&:id) }= p.short_name
