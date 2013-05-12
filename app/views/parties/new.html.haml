@@ -66,6 +66,7 @@
       var $step2 = $('#step2');
       var $tmplModal = $('#templatesModal');
       var gblTemplate;
+      var gblSuggestions;
 
       $('#CreatorWizard').wizard();
       $step2.itemlist();
@@ -78,6 +79,10 @@
           var template = gblTemplate[i];
           $tmplList.append('<label class="checkbox"><input name="'+template.name+'" type="checkbox"> '+template.label+'</label>');
         }
+      });
+
+      $.getJSON('suggestions.json', function(data) {
+        gblSuggestions = data;
       });
 
       // add templates items
@@ -95,6 +100,16 @@
         });
       });
 
+      function getSuggestion(suggestionName){
+        if(gblSuggestions){
+          for(var i in gblSuggestions){
+            if(gblSuggestions[i].value == suggestionName){
+              return gblSuggestions[i];
+            }
+          }
+        }
+      }
+
       function setQuickAction(selectedObj){
         console.log(selectedObj);
         $step2.find('.links .quick-action').remove();
@@ -108,7 +123,7 @@
           $step2.find('.links .quick-action').click(function(){
             var itemToAdd = $(this).find('span').html();
             $step2.itemlist('add-items', [itemToAdd]);
-            // TODO récupérer l'objet dans les suggestions pour chainer les résultats : setQuickAction(itemToAdd);
+            setQuickAction(getSuggestion(itemToAdd));
             $(this).remove();
             return false;
           });
