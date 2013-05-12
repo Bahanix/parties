@@ -18,6 +18,10 @@
 @import "font-awesome";
 @import 'baseline';
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 header {
   float: right;
   margin-top: 10px;
