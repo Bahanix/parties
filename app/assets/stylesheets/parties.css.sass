@@ -5,87 +5,89 @@ $base-font-size: 16px
 $base-line-height: 24px
 +establish-baseline
 
-.parties.new
+.parties
   // +baseline-grid-background
 
-  h1
-    $font-size: 60px
-    +adjust-font-size-to($font-size)
-    +leader(0,$font-size)
-    +trailer(1,$font-size)
+  &.new, &.create
 
-  .header
+    h1
+      $font-size: 60px
+      +adjust-font-size-to($font-size)
+      +leader(0,$font-size)
+      +trailer(1,$font-size)
 
-    display: table
-    width: 100%
-    +trailer(1)
+    .header
 
-    ol
-      display: table-row
-      counter-reset: li
-
-      & > li
-        display: table-cell
-        position: relative
-        cursor: pointer
-        width: 33.33%
-
-
-        &:before
-          +transition(0.25s)
-          content: counter(li)
-          counter-increment: li
-
-          position: absolute
-          left: 0
-          top: 0
-          display: inline-block
-
-          $font-size: 48px
-          +adjust-font-size-to($font-size)
-          +adjust-leading-to(3, $font-size)
-          width: rhythm(3, $font-size)
-
-          background: #ECF0F1
-          color: #fff
-          text-align: center
-          +border-radius(50px)
-
-        &.active
-          font-weight: bold
-
-          &:before
-            +transition(0.25s)
-            background: #2980B9
-          &:hover:before
-            +transition(0.25s)
-            background: #3498DB
-
-        &.complete
-          &:before
-            +transition(0.25s)
-            background: #27AE60
-          &:hover:before
-            +transition(0.25s)
-            background: #2ECC71
-          
-
-        span
-          display: block
-          +adjust-leading-to(3)
-          padding-left: rhythm(3) + 0.4em
-          vertical-align: middle
-
-  .form-inputs
-    .control-group
-      +adjust-leading-to(2)
+      display: table
+      width: 100%
       +trailer(1)
 
-      .control-label
-        +adjust-leading-to(2)
-        +rhythm(0,0,0,0)
+      ol
+        display: table-row
+        counter-reset: li
 
-      .controls
-        input[type='text']
-          +rhythm(0,0.2,0.2,0)
+        & > li
+          display: table-cell
+          position: relative
+          cursor: pointer
+          width: 33.33%
+
+
+          &:before
+            +transition(0.25s)
+            content: counter(li)
+            counter-increment: li
+
+            position: absolute
+            left: 0
+            top: 0
+            display: inline-block
+
+            $font-size: 48px
+            +adjust-font-size-to($font-size)
+            +adjust-leading-to(3, $font-size)
+            width: rhythm(3, $font-size)
+
+            background: #ECF0F1
+            color: #fff
+            text-align: center
+            +border-radius(50px)
+
+          &.active
+            font-weight: bold
+
+            &:before
+              +transition(0.25s)
+              background: #2980B9
+            &:hover:before
+              +transition(0.25s)
+              background: #3498DB
+
+          &.complete
+            &:before
+              +transition(0.25s)
+              background: #27AE60
+            &:hover:before
+              +transition(0.25s)
+              background: #2ECC71
+            
+
+          span
+            display: block
+            +adjust-leading-to(3)
+            padding-left: rhythm(3) + 0.4em
+            vertical-align: middle
+
+    .form-inputs
+      .control-group
+        +adjust-leading-to(2)
+        +trailer(1)
+
+        .control-label
+          +adjust-leading-to(2)
+          +rhythm(0,0,0,0)
+
+        .controls
+          input[type='text']
+            +rhythm(0,0.2,0.2,0)
 
