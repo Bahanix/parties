@@ -1,3 +1,5 @@
+%h1.top Create your event
+
 #CreatorWizard.fuelux-wizard.wizard
   .header
     %ol.steps
@@ -59,9 +61,8 @@
             .controls
               = text_area :post, :body, :rows => 3
         .pull-right
-          = f.button :submit, class: 'btn btn-large btn-next'
+          = f.button :submit, class: 'btn btn-large'
         .clearfix
-
 
 
 - content_for :js do
@@ -75,7 +76,7 @@
       $('#CreatorWizard').wizard();
       $step2.itemlist();
 
-      $('.add_fields').click();
+      if($step2.find('.nested-fields').length == 0){$step2.find('.add_fields').click();}
 
       // load templates in modal
       $.getJSON('template.json', function(data) {
@@ -83,7 +84,10 @@
         $tmplList = $tmplModal.find('.modal-body p');
         for(var i in gblTemplate){
           var template = gblTemplate[i];
-          $tmplList.append('<label class="checkbox"><input name="'+template.name+'" type="checkbox"> '+template.label+'</label>');
+          
+          $tmplList.append('<div class="span3"><label class="template" for="'+template.name+'"  data-dismiss="modal"><div class="thumbnail">'+
+                            '<div class="caption"><h3>'+template.label+'</h3><p>'+template.desc+'</p>'+
+                            '</div></label></div>');
         }
       });
 
@@ -92,18 +96,16 @@
       });
 
       // add templates items
-      $tmplModal.find('.btn-submit').click(function(){
-        $tmplModal.find('.modal-body input[type="checkbox"]:checked').each(function(){
-          var $elt = $(this);
-          for(var i in gblTemplate){
-            var template = gblTemplate[i];
-            if(template.name === $elt.attr('name')){
-              $step2.itemlist('add-items', template.items);
-              $elt.attr('checked', false);
-              break;
-            }
+      $tmplModal.on('click', 'label.template', function(){
+        var $elt = $(this);
+        for(var i in gblTemplate){
+          var template = gblTemplate[i];
+          if(template.name === $elt.attr('for')){
+            $step2.itemlist('add-items', template.items);
+            $elt.attr('checked', false);
+            break;
           }
-        });
+        }
       });
 
       function getSuggestion(suggestionName){
