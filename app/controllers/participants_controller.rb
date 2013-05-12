@@ -4,7 +4,7 @@ class ParticipantsController < ApplicationController
     @items = Party.find(params[:party][:id]).items
 
     respond_to do |format|
-      if @participant.items = Item.where(id: params[:items].keys)
+      if @participant.items = Item.where(id: (params[:items] || {}).keys)
         format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
         format.json { head :no_content }
         format.js

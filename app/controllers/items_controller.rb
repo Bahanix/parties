@@ -14,4 +14,15 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    respond_to do |format|
+      format.html { redirect_to parties_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
 end

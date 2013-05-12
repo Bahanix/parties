@@ -1,27 +1,65 @@
 - content_for :title, @party.name
 
+:scss
+  .input-append .btn:last-child { height: 30px; }
+  .widget {
+    border: 1px lighten(#2ecc71, 0%) solid;
+    padding: 12px;
+    margin-bottom: 12px;
+    form {
+      margin-bottom: 0;
+    }
+    .control-group:last-child {
+      margin-bottom: 0;
+
+    }
+    label.checkbox {
+      height: 30px;
+    }
+    input[type=checkbox] {
+      height: 26px;
+    }
+  }
+  .item_name {
+    display: inline-block;
+    line-height: 30px;
+    width: 200px;
+  }
+
 %h1= best_in_place @party, :name
 %p= best_in_place @party, :description, nil: t('.description')
 %p= best_in_place @party, :start_at, type: :date
 
-= form_tag participants_path(format: :js), remote: true, class: 'form-participants' do
-  = hidden_field_tag "party[id]", @party.id
-  .input-append
-    = text_field_tag 'participant[name]'
-    = submit_tag '+', class: 'btn'
-  .participants
-    - @party.participants.includes(:items).each do |p|
-      = render 'participants/avatar', p: p
+.widget
+  = form_tag participants_path(format: :js), remote: true, class: 'form-horizontal form-participants' do
+    = hidden_field_tag "party[id]", @party.id
+    .control-group
+      %label.control-label Subscribe as
+      .controls
+        .input-append
+          = text_field_tag 'participant[name]'
+          = submit_tag '+', class: 'btn'
+    .control-group
+      %label.control-label Participants
+      .controls
+        .participants
+          - @party.participants.includes(:items).each do |p|
+            = render 'participants/avatar', p: p
 
-= form_tag settings_path(format: :js), remote: true, class: 'form-items' do
-  = hidden_field_tag "party[id]", @party.id
-  = hidden_field_tag "participant[id]", 0
-  .items
-    - @party.items.includes(:participants).each do |i|
-      = render 'items/show', i: i
-
-= form_tag items_path(format: :js), remote: true do
-  = hidden_field_tag "party[id]", @party.id
-  .input-append
-    = text_field_tag 'item[name]'
-    = submit_tag '+', class: 'btn'
+.widget
+  = form_tag settings_path(format: :js), remote: true, class: 'form-horizontal form-items' do
+    = hidden_field_tag "party[id]", @party.id
+    = hidden_field_tag "participant[id]", 0
+    .control-group
+      %label.control-label Stuff you bring
+      .controls
+        .items
+          - @party.items.includes(:participants).each do |i|
+            = render 'items/show', i: i
+  = form_tag items_path(format: :js), remote: true, class: 'form-horizontal' do
+    = hidden_field_tag "party[id]", @party.id
+    .control-group
+      .controls
+        .input-append
+          = text_field_tag 'item[name]'
+          = submit_tag '+', class: 'btn'

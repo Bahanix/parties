@@ -1,5 +1,8 @@
-%label.checkbox{ for: "items_#{i.id}" }
+%label.checkbox{ class: "iid_#{i.id}" }
   = check_box_tag "items[#{i.id}]", 1, defined?(checked) ? checked : false, class: 'item', 'data-id' => i.id
-  = i.name
+  %p.item_name= i.name
+  - if i.participants.empty?
+    = link_to i, method: :delete, remote: true do
+      .participant.delete{ title: 'Delete', class: 'touriste' } –
   - i.participants.each do |p|
     = render 'participants/avatar', p: p

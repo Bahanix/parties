@@ -2,6 +2,7 @@
   font-family: FontAwesome;
   margin-right: 6px;
   font-size: 14px;
+  opacity: 0.5;
 }
 .best_in_place[data-type=input]:before {
   content: "\f040";
@@ -12,7 +13,7 @@
 .best_in_place {
   cursor: pointer;
   form, input {
-    width: 80%;
+    width: 50%;
     margin: 0;
     padding: 0;
   }

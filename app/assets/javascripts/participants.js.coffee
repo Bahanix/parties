@@ -12,8 +12,8 @@ $participants.on 'click', '.participant', ->
   $item.prop('disabled', false);
   $this = current = $(this)
   $pid.val($this.data('id'))
-  $participants.find('.participant').css 'background-color', '#ddd'
-  $this.css 'background-color', '#dfd'
+  $participants.find('.participant').removeClass('selected')
+  $this.addClass('selected')
   $items.find('.item').prop('checked', false)
   for item in $this.data('items')
     $('#items_' + item).prop('checked', true)

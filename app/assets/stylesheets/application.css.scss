@@ -19,6 +19,9 @@
 @import 'baseline';
 
 header {
+  float: right;
+  margin-top: 10px;
+
   background-image: inline-image('clipboard.png');
   background-repeat: no-repeat;
   background-position: left top;
