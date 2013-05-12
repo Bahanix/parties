@@ -26,12 +26,12 @@
     = hidden_field_tag "party[id]", @party.id
     = hidden_field_tag "participant[id]", 0
     .control-group
-      %label.control-label Stuff you bring
+      %label#stuff.control-label Stuff you bring
       .controls
         .items
           - @party.items.includes(:participants).each do |i|
             = render 'items/show', i: i
-  = form_tag items_path(format: :js), remote: true, class: 'form-horizontal' do
+  = form_tag items_path(format: :js), remote: true, class: 'form-horizontal form-add-item' do
     = hidden_field_tag "party[id]", @party.id
     .control-group
       .controls
