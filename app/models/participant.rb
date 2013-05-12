@@ -3,6 +3,7 @@ class Participant < ActiveRecord::Base
   has_and_belongs_to_many :items
   attr_accessible :name
   validates_presence_of :name
+  validates_uniqueness_of :name, scope: :party_id
 
   def short_name
     splitted = name.split ' '

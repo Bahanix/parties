@@ -24,3 +24,26 @@
     height: 28px;
   }
 }
+.input-append .btn:last-child { height: 30px; }
+.widget {
+  border: 1px lighten(#2ecc71, 0%) solid;
+  padding: 12px;
+  margin-bottom: 12px;
+  form {
+    margin-bottom: 0;
+  }
+  .control-group:last-child {
+    margin-bottom: 0;
+  }
+  label.checkbox {
+    height: 30px;
+  }
+  input[type=checkbox] {
+    height: 26px;
+  }
+}
+.item_name {
+  display: inline-block;
+  line-height: 30px;
+  width: 200px;
+}
