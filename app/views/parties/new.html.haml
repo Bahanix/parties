@@ -1,4 +1,4 @@
-.clearfix
+.clearfix.visible-phone
 %h1.top Create your event
 
 #CreatorWizard.fuelux-wizard.wizard
@@ -39,7 +39,7 @@
               %label.control-label
               .controls
                 %input{:type => "text",:disabled => ""}
-            = link_to_add_association 'add item', f, :items
+            = link_to_add_association 'Add item', f, :items
             .clearfix
         .pull-right
           %a.btn.btn-large.btn-next{:href => "#", "data-target" => "#step3"}
@@ -144,8 +144,4 @@
       $step2.bind('typeahead:selected', function(event, selectedObj){
         setQuickAction(selectedObj);
       });
-
-
-
-
     }).call(this);

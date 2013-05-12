@@ -1,5 +1,33 @@
 [
   {
+    "type":"salted",
+    "value":"pizza",
+    "desc":"is good with beer !",
+    "next":["beer", "coke"]
+  },
+  {
+    "type":"alcohol",
+    "value":"beer",
+    "desc":"I have good memories about that....",
+    "next":["peanut","olives","chips"]
+  },
+  {
+    "type":"salted",
+    "value":"chips",
+    "desc":"and what about guacamole",
+    "next":["guacamole"]
+  },
+  {
+    "type":"sauce",
+    "value":"guacamole",
+    "desc":"Yummy!"
+  },
+  {
+    "type":"salted",
+    "value":"peanut",
+    "desc":"Go to the bar"
+  },
+  {
     "type":"salé",
     "value":"saucisson",
     "desc":"",
@@ -18,12 +46,6 @@
     "next":["saucisson"]
   },
   {
-    "type":"salé",
-    "value":"pizza",
-    "desc":"is good with beer !",
-    "next":["bière", "vodka"]
-  },
-  {
     "type":"alcool",
     "value":"bière",
     "desc":"is life...",
@@ -34,18 +56,6 @@
     "value":"vodka",
     "desc":"is life...",
     "next":["jus d'orange"]
-  },
-  {
-    "type":"salé",
-    "value":"chips",
-    "desc":"and what about guacamole",
-    "next":["moutarde"]
-  },
-  {
-    "type":"sauce",
-    "value":"guacamole",
-    "desc":"is the best :)",
-    "next":["tequila"]
   },
   {
     "type":"alcool",

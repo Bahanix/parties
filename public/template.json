@@ -8,10 +8,10 @@
   },
   {
     "name":"picnic",
-    "label":"Pic nic",
+    "label":"Picnic",
     "image":"http://polyglotclub.com/UserFiles/Picnic-polyglot-birthday-friday.gif",
-    "desc":"Profiter du beau temps en tout confort",
-    "items":[ "assiettes", "verres", "couverts", "bouteilles d'eau", "serviettes" ]
+    "desc":"when the sun is shining and the weather is sweet",
+    "items":[ "plates", "glasses", "flatware", "towels", "water bottles" ]
   },
   {
     "name":"vegetarian",
