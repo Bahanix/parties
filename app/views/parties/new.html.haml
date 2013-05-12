@@ -29,7 +29,7 @@
         .templates.pull-right
           %a.btn.btn-template{:href => "#templatesModal", "data-toggle" => "modal"}
             %i.icon-bookmark
-            Idées
+            ideas
         .items
           = f.simple_fields_for :items do |i|
             = render 'item_fields', :f => i
@@ -87,7 +87,7 @@
           $tmplList.append('<div class="span2"><label class="template" for="'+template.name+'"  data-dismiss="modal">'+
                             '<div class="thumbnail">'+
                             '<div class="caption">'+(template.image?'<img src="'+template.image+'" />':'')+
-                            '<h3>'+template.label+'</h3><p>'+template.desc+'</p>'+
+                            '<h3>'+(template.label || template.value)+'</h3><p>'+template.desc+'</p>'+
                             '</div></label></div>');
         }
       });
