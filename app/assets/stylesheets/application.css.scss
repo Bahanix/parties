@@ -50,12 +50,19 @@ header {
     @include rhythm(0,0,0,0);
   }
 
-  h1.top {
-    margin-top: 25px;
-  }
-
   .catchphrase {
     font-style: italic;
     color: #BDC3C7;
   }
+}
+
+h1.top {
+  margin-top: 25px;
+}
+
+.thumbnail:hover {
+  background: #4e6d8d;
+}
+.thumbnail:hover h3, .thumbnail:hover p {
+  color: white;
 }

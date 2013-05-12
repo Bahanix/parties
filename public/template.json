@@ -1,19 +1,22 @@
 [
   {
     "name":"foot",
-    "label":"Soirée foot",
+    "label":"Foot",
+    "image":"http://images.nike.com/is/image/emea/NIKE_PDP/Nike-Mercurial-Magia-Football-SC2207_553_A.jpg",
     "desc":"Sport, bières et pizzas; what else ?",
     "items":[ "pizza", "chips", "bière" ]
   },
   {
     "name":"film",
-    "label":"Soirée film",
+    "label":"Film",
+    "image":"http://smartermobile.co.uk/wp-content/uploads/2012/07/aa-Orange-Film-Thursdays.jpg",
     "desc":"Tout pour passer une soirée bien callé.",
     "items":["chips", "guacamole", "cacahuètes", "coca"]
   },
   {
     "name":"picnic",
     "label":"Pic nic",
+    "image":"http://polyglotclub.com/UserFiles/Picnic-polyglot-birthday-friday.gif",
     "desc":"Profiter un beau temps en tout confort",
     "items":[ "assiettes", "verres", "couverts", "bouteilles d'eau", "serviettes" ]
   }
