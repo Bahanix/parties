@@ -1,34 +1,8 @@
 - content_for :title, @party.name
 
-:scss
-  .input-append .btn:last-child { height: 30px; }
-  .widget {
-    border: 1px lighten(#2ecc71, 0%) solid;
-    padding: 12px;
-    margin-bottom: 12px;
-    form {
-      margin-bottom: 0;
-    }
-    .control-group:last-child {
-      margin-bottom: 0;
-
-    }
-    label.checkbox {
-      height: 30px;
-    }
-    input[type=checkbox] {
-      height: 26px;
-    }
-  }
-  .item_name {
-    display: inline-block;
-    line-height: 30px;
-    width: 200px;
-  }
-
 %h1= best_in_place @party, :name
-%p= best_in_place @party, :description, nil: t('.description')
 %p= best_in_place @party, :start_at, type: :date
+%p= best_in_place @party, :description, nil: t('.description')
 
 .widget
   = form_tag participants_path(format: :js), remote: true, class: 'form-horizontal form-participants' do
@@ -45,6 +19,7 @@
         .participants
           - @party.participants.includes(:items).each do |p|
             = render 'participants/avatar', p: p
+        .help-block Click to see what the participant brings
 
 .widget
   = form_tag settings_path(format: :js), remote: true, class: 'form-horizontal form-items' do
