@@ -1,6 +1,8 @@
 @import compass/css3
 @import compass/typography
 
+@import respond_to
+
 $base-font-size: 16px
 $base-line-height: 24px
 +establish-baseline
@@ -22,6 +24,9 @@ $base-line-height: 24px
       width: 100%
       +trailer(1)
 
+      +respond(tablet, phone)
+        display: block
+
       ol
         display: table-row
         counter-reset: li
@@ -32,12 +37,22 @@ $base-line-height: 24px
           cursor: pointer
           width: 33.33%
 
+          +respond(tablet, phone)
+            display: block
+            width: auto
+
           span
             position: relative
             display: block
+            vertical-align: middle
             +adjust-leading-to(3)
             padding-left: rhythm(3) + 0.4em
-            vertical-align: middle
+
+            +respond(tablet, phone)
+              $font-size: 36px
+              +adjust-font-size-to($font-size)
+              padding-left: rhythm(1, $font-size) + 1.5em
+              +trailer(0.5, $font-size)
 
             &:before
               +transition(0.25s)
@@ -53,6 +68,12 @@ $base-line-height: 24px
               +adjust-font-size-to($font-size)
               +adjust-leading-to(3, $font-size)
               width: rhythm(3, $font-size)
+
+              +respond(tablet, phone)
+                $font-size: 24px
+                +adjust-font-size-to($font-size)
+                +adjust-leading-to(1, $font-size)
+                width: rhythm(1, $font-size)
 
               background: #ECF0F1
               color: #fff
@@ -70,6 +91,7 @@ $base-line-height: 24px
               background: #3498DB
 
           &.complete span
+
             &:before
               +transition(0.25s)
               background: #27AE60
@@ -79,15 +101,27 @@ $base-line-height: 24px
             
 
     .form-inputs
+      +respond(tablet,phone)
+        &:not(:first-child) .control-label
+          display: none !important
+        
       .control-group
         +adjust-leading-to(2)
         +trailer(1)
+
+        +respond(tablet, phone)
+          +adjust-leading-to(1)
+          +trailer(0)
+          display: block
 
         .control-label
           +adjust-leading-to(2)
           +rhythm(0,0,0,0)
 
+          +respond(tablet, phone)
+            +adjust-leading-to(1)
+            display: block
+
         .controls
           input[type='text']
             +rhythm(0,0.2,0.2,0)
-
