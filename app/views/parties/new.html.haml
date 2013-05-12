@@ -9,56 +9,59 @@
       %li{"data-target" => "#step3"}
         %span Your guests
 
-  = simple_form_for(@party, html: { class: 'form-horizontal step-content' }) do |f|
-    = f.error_notification
-    #step1.step-pane
-      .form-inputs
-        = f.input :name
-        = f.input :location
-        = f.input :start_at, :as => :datepicker
-        = f.input :description, input_html: { rows: 3 }
-      .pull-right
-        %a.btn.btn-mini.btn-next{:href => "#", "data-target" => "#step2"}
-          next
-          %i.icon-arrow-right
-      .clearfix
-    #step2.step-pane
-      .templates.pull-right
-        %a.btn.btn-template{:href => "#templatesModal", "data-toggle" => "modal"}
-          %i.icon-bookmark
-          Idées
-      .items
-        = f.simple_fields_for :items do |i|
-          = render 'item_fields', :f => i
-        .links
-          .control-group.form-inputs
-            %label.control-label
+  .widget
+    = simple_form_for(@party, html: { class: 'form-horizontal step-content' }) do |f|
+      = f.error_notification
+      #step1.step-pane
+        .form-inputs
+          = f.input :name
+          = f.input :location
+          = f.input :start_at, :as => :datepicker
+          = f.input :description, input_html: { rows: 3 }
+        .pull-right
+          %a.btn.btn-large.btn-next{:href => "#", "data-target" => "#step2"}
+            next
+            %i.icon-arrow-right
+        .clearfix
+      #step2.step-pane
+        .templates.pull-right
+          %a.btn.btn-template{:href => "#templatesModal", "data-toggle" => "modal"}
+            %i.icon-bookmark
+            Idées
+        .items
+          = f.simple_fields_for :items do |i|
+            = render 'item_fields', :f => i
+          .links
+            .control-group.form-inputs
+              %label.control-label
+              .controls
+                %input{:type => "text",:disabled => ""}
+            = link_to_add_association 'add item', f, :items
+            .clearfix
+        .pull-right
+          %a.btn.btn-large.btn-next{:href => "#", "data-target" => "#step3"}
+            next
+            %i.icon-arrow-right
+        .clearfix
+        #templatesModal.modal.hide.fade
+          .modal-header
+            %button.close{"data-dismiss" => "modal", :type => "button"} ×
+            %h3#myModalLabel Choose a template
+          .modal-body
+            %p
+          .modal-footer
+            %button.btn{"data-dismiss" => "modal"} Close
+            %button.btn.btn-primary.btn-submit{"data-dismiss" => "modal"} Add items
+      #step3.step-pane
+        .form-inputs
+          .control-group
+            %label.control-label Destinataires
             .controls
-              %input{:type => "text",:disabled => ""}
-          = link_to_add_association 'add item', f, :items
-          .clearfix
-      .pull-right
-        %a.btn.btn-next{:href => "#", "data-target" => "#step3"}
-          next
-          %i.icon-arrow-right
-      .clearfix
-      #templatesModal.modal.hide.fade
-        .modal-header
-          %button.close{"data-dismiss" => "modal", :type => "button"} ×
-          %h3#myModalLabel Choose a template
-        .modal-body
-          %p
-        .modal-footer
-          %button.btn{"data-dismiss" => "modal"} Close
-          %button.btn.btn-primary.btn-submit{"data-dismiss" => "modal"} Add items
-    #step3.step-pane
-      .form-inputs
-        .control-group
-          %label.control-label Destinataires
-          .controls
-            = text_area :post, :body, :rows => 3
-      .form-actions
-        = f.button :submit
+              = text_area :post, :body, :rows => 3
+        .pull-right
+          = f.button :submit, class: 'btn btn-large btn-next'
+        .clearfix
+
 
 
 - content_for :js do
