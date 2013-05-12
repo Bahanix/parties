@@ -1,3 +1,5 @@
+@import 'respond_to';
+
 .fuelux-wizard .step-content .step-pane {
   display: none;
 }
@@ -8,7 +10,18 @@
 
 .fuelux-wizard .form-inputs input, .fuelux-wizard .form-inputs textarea {
   width: 500px;
+  
+  @include respond(tablet, phone) {
+    width: 50%;
+  }
 }
+
+.fuelux-wizard .form-inputs textarea {
+  @include respond(tablet, phone) {
+    width: 100%;
+  }
+}
+
 
 .fuelux-wizard .form-inputs .remove_fields {
   float: right;

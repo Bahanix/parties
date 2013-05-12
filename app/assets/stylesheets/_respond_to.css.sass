@@ -1,0 +1,27 @@
+@mixin respond-to($min: false, $max: false)
+  @if $min and $max
+    @media (max-width: $max)
+      @content
+  @else if $max
+    @media (max-width: $max)
+      @content
+  @else if $min
+    @media (min-width: $min)
+      @content
+
+@mixin respond($media...)
+  @if index($media, phone)
+    +respond-to(false,480px)
+      @content
+  @else if index($media, tablet)
+    +respond-to(481px, 767px)
+      @content
+  @else if index($media, portrait-tablet)
+    +respond-to(768px, 980px)
+      @content
+  @else if index($media, desktop)
+    +respond-to(981px, 1200px)
+      @content
+  @else if index($media, large-desktop)
+    +respond-to(1200px, false)
+      @content
