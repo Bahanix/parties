@@ -1,12 +1,5 @@
 [
   {
-    "name":"foot",
-    "label":"Foot",
-    "image":"http://images.nike.com/is/image/emea/NIKE_PDP/Nike-Mercurial-Magia-Football-SC2207_553_A.jpg",
-    "desc":"Sport, bières et pizzas; what else ?",
-    "items":[ "pizza", "chips", "bière" ]
-  },
-  {
     "name":"film",
     "label":"Film",
     "image":"http://smartermobile.co.uk/wp-content/uploads/2012/07/aa-Orange-Film-Thursdays.jpg",
@@ -17,7 +10,35 @@
     "name":"picnic",
     "label":"Pic nic",
     "image":"http://polyglotclub.com/UserFiles/Picnic-polyglot-birthday-friday.gif",
-    "desc":"Profiter un beau temps en tout confort",
+    "desc":"Profiter du beau temps en tout confort",
     "items":[ "assiettes", "verres", "couverts", "bouteilles d'eau", "serviettes" ]
+  },
+  {
+    "name":"vegetarian",
+    "label":"Végétarien",
+    "image":"http://fr.questmachine.org/encyclopedie/illustrations/illustrations_articles/fruits-et-legumes1290463530.jpg",
+    "desc":"Bien manger c'est la santé.",
+    "items":[ "cidre", "carottes", "champignon", "tapenade" ]
+  },
+  {
+    "name":"french",
+    "label":"Cliché",
+    "image":"http://medias.jds.fr/annuaire/169/saucisson_fromage_vin_rouge_300.jpg",
+    "desc":"On aime tellement ça :)",
+    "items":[ "vin", "pain", "fromage", "saucisson" ]
+  },
+  {
+    "name":"purse",
+    "label":"Cagnotte",
+    "image":"http://www.cadeaux-lily-liste.com/media/images/Visuel_Page_Cagnotte.jpg",
+    "desc":"Pour budgeter une soirée",
+    "items":[ "5 €", "10 €", "15 €", "20 €", "25 €" ]
+  },
+  {
+    "name":"foot",
+    "label":"Foot",
+    "image":"http://images.nike.com/is/image/emea/NIKE_PDP/Nike-Mercurial-Magia-Football-SC2207_553_A.jpg",
+    "desc":"Sport, bières et pizzas; what else ?",
+    "items":[ "pizza", "chips", "bière" ]
   }
 ]
