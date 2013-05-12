@@ -23,7 +23,8 @@
           next
           %i.icon-arrow-right
       .clearfix
-    #step2.step-pane
+    #step2.step-pane.active
+      %a.btn.btn-template set list
       = f.simple_fields_for :items do |i|
         = render 'item_fields', :f => i
       .links
@@ -45,39 +46,12 @@
 
 - content_for :js do
   :javascript
-    var suggestions = ['titi', 'toto', 'tata', 'tutu'];
-    var suggestions2 = [
-      {"title":"pizza","desc":"is good with beer !","type":"nourriture salée"},
-      {"title":"beer","desc":"is life...","type":"alcool"},
-      {"title":"chips","desc":"and what about guacamole","type":"nourriture salée"},
-      {"title":"guacamole","desc":"is the best :)","type":"nourriture salée"},
-      {"title":"kitkats","desc":"have a break.","type":"nourriture sucrée"},
-      {"title":"vodka","desc":"pour les hommes","type":"alcool"}
-    ];
-    var suggestions3 = [
-      '<p class="repo-language">nourriture salée</p><p class="repo-name">pizza</p><p class="repo-description">is good with beer !</p>',
-      '<p class="repo-language">alcool</p><p class="repo-name">beer</p><p class="repo-description">is life...</p>',
-      '<p class="repo-language">nourriture salée</p><p class="repo-name">chips</p><p class="repo-description">what about guacamole?</p>',
-      '<p class="repo-language">nourriture salée</p><p class="repo-name">guacamole</p><p class="repo-description">is the best :)</p>',
-      '<p class="repo-language">nourriture sucrée</p><p class="repo-name">kitkats</p><p class="repo-description">have a break.</p>',
-      '<p class="repo-language">alcool</p><p class="repo-name">vodka</p><p class="repo-description">pour les hommes</p>'
-    ];
     (function(){
       $('#CreatorWizard').wizard();
-      $('#step2').bind('cocoon:after-insert', function(){
-        var $newField = $(this).find('.nested-fields').last().find('.controls input');
+      $('#step2').itemlist();
 
-        $newField.typeahead({
-          name: 'twitter-oss',
-          prefetch: 'suggestions.json',
-          template: [
-            '<p class="repo-language">{{type}}</p>',
-            '<p class="repo-name">{{value}}</p>',
-            '<p class="repo-description">{{desc}}</p>'
-          ].join(''),
-          engine: Hogan
-        });
-
-        $newField.focus();
+      $('#step2 .btn-template').click(function(){
+        $('#step2').itemlist('set-items', ['pizza', 'chips', 'bière']);
+        return false;
       });
     }).call(this);
