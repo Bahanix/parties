@@ -1,0 +1,8 @@
+[
+  {"value":"pizza","desc":"is good with beer !","type":"nourriture salée"},
+  {"value":"beer","desc":"is life...","type":"alcool"},
+  {"value":"chips","desc":"and what about guacamole","type":"nourriture salée"},
+  {"value":"guacamole","desc":"is the best :)","type":"nourriture salée"},
+  {"value":"kitkats","desc":"have a break.","type":"nourriture sucrée"},
+  {"value":"vodka","desc":"pour les hommes","type":"alcool"}
+]
