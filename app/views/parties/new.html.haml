@@ -22,7 +22,7 @@
           next
           %i.icon-arrow-right
       .clearfix
-    #step2.step-pane.active
+    #step2.step-pane
       .templates.pull-right
         %a.btn.btn-template{:href => "#templatesModal", "data-toggle" => "modal"}
           %i.icon-bookmark
@@ -71,6 +71,8 @@
 
       $('#CreatorWizard').wizard();
       $step2.itemlist();
+
+      $('.add_fields').click();
 
       // load templates in modal
       $.getJSON('template.json', function(data) {
